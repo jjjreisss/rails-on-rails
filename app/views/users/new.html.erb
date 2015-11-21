@@ -1,0 +1,33 @@
+<h1>Sign up!</h1>
+
+
+<form action=" <%= users_url %>" method="post">
+  <%=  authenticity_token %>
+  <table>
+    <tr>
+      <td>
+        Username
+      </td>
+      <td>
+        <input type="text" name="user[username]">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Password
+      </td>
+      <td>
+        <input type="password" name="user[password]">
+      </td>
+    </tr>
+      <tr>
+        <td>
+          Email
+        </td>
+        <td>
+          <input type="text" name="user[email]">
+        </td>
+      </tr>
+  </table>
+  <input type="submit" value="Sign up!">
+</form>

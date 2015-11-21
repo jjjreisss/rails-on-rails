@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reddit</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <%= render "shared/errors_notices.html.erb" %>
+
+  <% if current_user %>
+    <h3>Hello, <%= current_user.username %> </h3>
+    <%= link_to "Logout", session_url, method: "delete" %>
+    <%= link_to "Your Profile", user_url(current_user) %>
+  <% else %>
+    <%= link_to "Sign Up", new_user_url %>
+    <%= link_to "Sign In", new_session_url %>
+  <% end %>
+  <%= link_to "All Subs", subs_url %>
+
+<%= yield %>
+
+
+</body>
+</html>

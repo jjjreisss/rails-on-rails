@@ -1,0 +1,15 @@
+<h3> <%= @sub.title %> </h3>
+Moderator: <%= link_to @author.username, user_url(@author) %>
+<p><%= @sub.description %></p>
+
+<p>
+  <% @sub.posts.each do |post| %>
+  <p>
+    Post: <%= link_to post.title, post_url(post) %>
+  </p>
+  <% end %>
+</p>
+
+<p>
+  <%= link_to "New Post", new_post_url(:sub_id =>  @sub.id)%>
+</p>
